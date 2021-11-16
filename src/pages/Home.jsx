@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ActorGrid from '../components/actor/ActorGrid';
 import { MainPageLayout } from '../components/MainPageLayout';
 import ShowGrid from '../components/show/ShowGrid';
@@ -10,6 +10,10 @@ const Home = () => {
   const [searchOption, setSearchOption] = useState('shows');
 
   const isShowSearch = searchOption === 'shows';
+
+  useEffect(() => {
+    console.log('use effect');
+  }, [input]);
 
   const onSearch = () => {
     apiGet(`/search/${searchOption}?q=${input}`).then(result => {
