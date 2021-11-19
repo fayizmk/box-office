@@ -11,10 +11,6 @@ const Home = () => {
 
   const isShowSearch = searchOption === 'shows';
 
-  useEffect(() => {
-    console.log('use effect');
-  }, [input]);
-
   const onSearch = () => {
     apiGet(`/search/${searchOption}?q=${input}`).then(result => {
       setResults(result);
