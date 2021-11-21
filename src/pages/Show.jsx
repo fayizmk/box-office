@@ -31,13 +31,14 @@ const Show = () => {
           tags={show.genres}
         />
         <h2>Details</h2>
+
         <Details
           status={show.status}
           network={show.network}
           premiered={show.premiered}
         />
       </ShowPageWrapper>
-
+      <br />
       <InfoBlock>
         <h2>Seasons</h2>
         <Seasons seasons={show._embedded.seasons} />
